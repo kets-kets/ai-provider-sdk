@@ -378,29 +378,6 @@ print(f"From cache: {result2.from_cache}")  # True
 
 ---
 
-## 🔐 Безопасность
-
-### Управление Секретами
-
-```python
-import os
-from ai_provider_sdk import ProviderConfig
-
-# ✅ Хорошо: секреты из переменных окружения
-config = ProviderConfig(
-    replicate_api_key=os.getenv("REPLICATE_API_KEY"),
-    openai_api_key=os.getenv("OPENAI_API_KEY"),
-    vertex_ai_project=os.getenv("GCP_PROJECT_ID")
-)
-
-# ❌ Плохо: хардкод секретов
-config = ProviderConfig(
-    replicate_api_key="r8_abc123...",  # НИКОГДА так не делайте!
-)
-```
-
----
-
 ## 🎯 Поддерживаемые Провайдеры
 
 | Провайдер | Текст | Изображения | Видео | Аудио |
